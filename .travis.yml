@@ -8,6 +8,7 @@ before_install:
   - poetry config virtualenvs.create false
 
 install:
+  - cp ./app/pyproject.toml ./
   - poetry install --no-root --no-dev
 
 after_success:
