@@ -10,7 +10,8 @@ before_install:
 install:
   - cp ./app/pyproject.toml ./
   - poetry install --no-root --no-dev
-
+script:
+  - pytest
 after_success:
   - docker build . -t blzface/future-of-security:backend-$TRAVIS_BUILD_NUMBER
   - echo "$DockerPassword" | docker login --username "$DockerUsername" --password-stdin; docker push  blzface/future-of-security:backend-$TRAVIS_BUILD_NUMBER

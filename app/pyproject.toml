@@ -6,6 +6,7 @@ authors = ["Nate <nateb@vt.edu>"]
 
 [tool.poetry.dependencies]
 dnspython = "*"
+pytest = "*"
 pymongo = "3.12.0 "
 certifi = "2021.5.30"
 
