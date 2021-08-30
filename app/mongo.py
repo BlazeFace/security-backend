@@ -7,7 +7,7 @@ client = pymongo.MongoClient(
 db = client["future-content"]
 col = db["content"]
 
-
+# Creates Page on MongoDB
 def create_page(cont_id):
     item = {"_id": cont_id, "content": "Basic"}
     col.insert_one(item)
