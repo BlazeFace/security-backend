@@ -12,7 +12,7 @@ def create_page(cont_id):
     item = {"_id": cont_id, "content": "Basic"}
     col.insert_one(item)
 
-
+# Retrieves Page
 def get_page(cont_id):
     q = {"_id": cont_id}
     return col.find_one(q)
