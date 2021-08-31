@@ -13,5 +13,5 @@ install:
 script:
   - pytest
 after_success:
-  - docker build . -t blzface/future-of-security:backend-$TRAVIS_BUILD_NUMBER
-  - echo "$DockerPassword" | docker login --username "$DockerUsername" --password-stdin; docker push  blzface/future-of-security:backend-$TRAVIS_BUILD_NUMBER
+  - docker build . -t blzface/future-of-security
+  - echo "$DockerPassword" | docker login --username "$DockerUsername" --password-stdin; docker push  blzface/future-of-security
