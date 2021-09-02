@@ -3,11 +3,11 @@ import pymongo
 import os
 
 client = ''
+
 if os.getenv("RUN_ENV") == "PROD":
-    connection = "mongodb+srv://python:{password}@futureofsecurity.oxjap.mongodb.net/future-content?retryWrites=true&w" \
-             "=majority "
     password = os.getenv("MONGO_PASSWORD")
-    connection.format(password=password)
+    connection = "mongodb+srv://python:{}@futureofsecurity.oxjap.mongodb.net/future-content?retryWrites=true&w" \
+             "=majority".format(password)
     client = pymongo.MongoClient(
         connection,
         tlsCAFile=certifi.where())
