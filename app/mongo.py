@@ -4,7 +4,7 @@ import os
 
 client = ''
 if os.getenv("RUN_ENV") == "PROD":
-    connection = "mongodb+srv://python:{password}futureofsecurity.oxjap.mongodb.net/future-content?retryWrites=true&w" \
+    connection = "mongodb+srv://python:{password}@futureofsecurity.oxjap.mongodb.net/future-content?retryWrites=true&w" \
              "=majority "
     password = os.getenv("MONGO_PASSWORD")
     connection.format(password=password)
