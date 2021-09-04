@@ -14,7 +14,7 @@ async def preflight_handler(request: Request, rest_of_path: str) -> Response:
     response = Response()
     response.headers['Access-Control-Allow-Origin'] = ALLOWED_ORIGINS
     response.headers['Access-Control-Allow-Methods'] = 'POST, GET, DELETE, OPTIONS'
-    response.headers['Access-Control-Allow-Headers'] = 'Authorization, Content-Type'
+    response.headers['Access-Control-Allow-Headers'] = 'Authorization, Content-Type, Access-Control-Allow-Origin'
     return response
 
 # set CORS headers
