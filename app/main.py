@@ -15,7 +15,9 @@ origins = [
     "localhost",
     "localhost:8080",
     "security.eastus.azurecontainer.io",
-    "security.eastus.azurecontainer.io:80"
+    "security.eastus.azurecontainer.io:80",
+    "http://security.eastus.azurecontainer.io",
+    "http://security.eastus.azurecontainer.io:80"
 ]
 
 app.add_middleware(
