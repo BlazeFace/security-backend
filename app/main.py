@@ -48,5 +48,10 @@ async def get_devices():
     return {"message": mongo.get_page('device-list')}
 
 
+@app.get("/concerns")
+async def get_devices():
+    return {"message": mongo.get_page('concern-list')}
+
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
