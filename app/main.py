@@ -17,7 +17,11 @@ origins = [
     "security.eastus.azurecontainer.io",
     "security.eastus.azurecontainer.io:80",
     "http://security.eastus.azurecontainer.io",
-    "http://security.eastus.azurecontainer.io:80"
+    "http://security.eastus.azurecontainer.io:80",
+    "security.eastus2.azurecontainer.io",
+    "security.eastus2.azurecontainer.io:80",
+    "http://security.eastus2.azurecontainer.io",
+    "http://security.eastus2.azurecontainer.io:80"
 ]
 
 app.add_middleware(
