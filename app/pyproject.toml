@@ -6,10 +6,10 @@ authors = ["Nate <nateb@vt.edu>"]
 
 [tool.poetry.dependencies]
 dnspython = "*"
-pydantic = "1.8.2"
 pytest = "*"
 pymongo = "3.12.0 "
 certifi = "2021.5.30"
+pydantic = {version = "^1.8.2", python = ">=3.6.1"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.4"

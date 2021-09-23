@@ -1,9 +1,10 @@
+import array
+import mongo
+import random
 import uvicorn
 from fastapi import FastAPI, Request, Response
-from starlette.middleware.cors import CORSMiddleware
-import mongo
 from pydantic import BaseModel
-import random, array
+from starlette.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
@@ -128,7 +129,7 @@ async def create_password(req: PassRequest):
     password = ""
     for x in temp_pass_list:
         password = password + x
-    return password
+    return {"message": password }
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
