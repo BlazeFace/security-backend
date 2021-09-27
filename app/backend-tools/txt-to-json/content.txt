@@ -1,0 +1,3 @@
+iPhone Medium High
+Android High Medium
+Windows Medium High
