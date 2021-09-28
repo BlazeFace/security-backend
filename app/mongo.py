@@ -29,3 +29,16 @@ def create_page(cont_id):
 def get_page(cont_id):
     q = {"_id": cont_id}
     return col.find_one(q)
+
+# Add devices_list 
+def add_device(device, url):
+    col.update(
+        { "_id": "device_list"},
+        {
+            "$push": {
+                "title": device,
+                "url": url
+            }
+        }    
+        ,{ upsert: true }
+    )
