@@ -1,4 +1,6 @@
 import array
+
+from starlette.responses import StreamingResponse
 import mongo
 import random
 import uvicorn
@@ -67,7 +69,14 @@ class PassRequest(BaseModel):
     upperCase: bool
     specChar: bool
 
+class Device(BaseModel):
+    device: str
+    url: str
 
+@app.post("/add/device")
+async def add_device(dev: Device):
+    return mongo.add_device(dev.device, dev.url)
+    
 @app.post("/password")
 async def create_password(req: PassRequest):
     # max length for password
