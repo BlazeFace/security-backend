@@ -4,14 +4,14 @@ import os
 
 client = ''
 
-if os.getenv("RUN_ENV") == "PROD":
+if os.getenv("RUN_ENV") != "PROD":
     username = "python"
     password = os.getenv("MONGO_PASSWORD")
-    if len(password) < 1:
-        pass_file = open("etc/secrets/password", "r")
+    if type(password) is None:
+        pass_file = open("/etc/secrets/password", "r")
         password = pass_file.read()
         pass_file.close()
-        user_file = open("etc/secrets/username", "r")
+        user_file = open("/etc/secrets/username", "r")
         username = user_file.read()
         user_file.close()
     connection = "mongodb+srv://{}:{}@futureofsecurity.oxjap.mongodb.net/future-content?retryWrites=true&w" \
