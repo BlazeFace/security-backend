@@ -5,9 +5,17 @@ import os
 client = ''
 
 if os.getenv("RUN_ENV") == "PROD":
+    username = "python"
     password = os.getenv("MONGO_PASSWORD")
-    connection = "mongodb+srv://python:{}@futureofsecurity.oxjap.mongodb.net/future-content?retryWrites=true&w" \
-             "=majority".format(password)
+    if len(password) < 1:
+        pass_file = open("etc/secrets/password", "r")
+        password = pass_file.read()
+        pass_file.close()
+        user_file = open("etc/secrets/username", "r")
+        username = user_file.read()
+        user_file.close()
+    connection = "mongodb+srv://{}:{}@futureofsecurity.oxjap.mongodb.net/future-content?retryWrites=true&w" \
+             "=majority".format(username, password)
     client = pymongo.MongoClient(
         connection,
         tlsCAFile=certifi.where())

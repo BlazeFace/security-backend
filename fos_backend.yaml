@@ -24,7 +24,6 @@ spec:
         env:
           - name: RUN_ENV
             value: PROD
-        command: ["echo /etc/secrets/password > $MONGO_PASSWORD"]
       volumes:
         - name: mongo
           secret:
